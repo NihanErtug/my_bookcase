@@ -1,0 +1,76 @@
+name: bookcase
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.6.2
+
+dependencies:
+  cloud_firestore: ^5.6.0
+  collection: ^1.19.0
+  firebase_auth: ^5.5.2
+  firebase_core: ^3.9.0
+  flutter:
+    sdk: flutter
+  flutter_cupertino_datetime_picker: ^3.0.0
+  flutter_native_splash: ^2.4.4
+  flutter_riverpod: ^2.6.1
+  flutter_speed_dial: ^7.0.0
+  icons_launcher: ^3.0.1
+  image_picker: ^1.1.2
+  intl: ^0.20.2
+  modal_bottom_sheet: ^3.0.0
+  path: ^1.9.0
+  path_provider: ^2.1.5
+  rxdart: ^0.28.0 
+  shared_preferences: ^2.3.3 
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/pictures/icon_default.png
+    - assets/pictures/splashscreen.png
+    - assets/pictures/default_pic.png
+  fonts:
+    - family: Lora
+      fonts:
+        - asset: assets/fonts/Lora-Regular.ttf
+        - asset: assets/fonts/Lora-Bold.ttf  
+          weight: 700
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Regular.ttf
+        - asset: assets/fonts/Roboto-Bold.ttf
+          weight: 700
+
+
+icons_launcher:
+  image_path: "assets/pictures/icon_default.png"
+
+  platforms:
+    android:
+      enable: true
+      adaptive_background_color: "#ffffff"
+      adaptive_foreground_image: "assets/pictures/icon_default.png"
+
+    web:
+      enable: true
+      image_path: "assets/pictures/icon_default.png"
+      favicon_path: "assets/pictures/icon_default.png"
+
+
+flutter_native_splash:
+  background_image: assets/pictures/splashscreen.png
+  android: true
+  ios: false
+  web: true
+
+
+
+

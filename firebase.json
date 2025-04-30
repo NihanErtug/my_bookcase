@@ -1,0 +1,37 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "bookcase-60149",
+          "appId": "1:361812646331:android:6c94ab8cb75ec1b0a94c9e",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "bookcase-60149",
+          "configurations": {
+            "android": "1:361812646331:android:6c94ab8cb75ec1b0a94c9e",
+            "web": "1:361812646331:web:02abc03e747b56eba94c9e"
+          }
+        }
+      }
+    }
+  },
+  "emulators": {
+    "auth": {
+      "port": 9099
+    },
+    "functions": {
+      "port": 5001
+    },
+    "firestore": {
+      "port": 8080
+    },
+    "ui": {
+      "enabled": true
+    },
+    "singleProjectMode": true
+  }
+}
