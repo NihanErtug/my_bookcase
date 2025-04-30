@@ -20,13 +20,19 @@ class _ImageSectionState extends State<ImageSection> {
   }
 
   void _onControllerChanged() {
-    if (mounted) setState(() {});
+    if (mounted) {
+      setState(() {});
+    }
   }
 
   @override
   void dispose() {
     widget.controller.removeListener(_onControllerChanged);
     super.dispose();
+  }
+
+  bool isUrl(String path) {
+    return path.startsWith('http://') || path.startsWith('https://');
   }
 
   @override
@@ -40,10 +46,62 @@ class _ImageSectionState extends State<ImageSection> {
         if (widget.controller.text.isNotEmpty)
           Column(
             children: [
-              Image.file(
-                File(widget.controller.text),
+              Container(
                 height: 200,
-                fit: BoxFit.cover,
+                width: 150,
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.grey),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: isUrl(widget.controller.text)
+                      ? Image.network(
+                          widget.controller.text,
+                          height: 200,
+                          fit: BoxFit.cover,
+                          errorBuilder: (context, error, stackTrace) {
+                            return Center(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(Icons.error, color: Colors.red),
+                                  SizedBox(height: 8),
+                                  Text(
+                                    "Resim yüklenemedi",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(color: Colors.red),
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                        )
+                      : Image.file(
+                          File(widget.controller.text),
+                          height: 200,
+                          fit: BoxFit.cover,
+                          errorBuilder: (context, error, stackTrace) {
+                            return Center(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(
+                                    Icons.error,
+                                    color: Colors.red,
+                                  ),
+                                  SizedBox(height: 8),
+                                  Text(
+                                    'Resim yüklenemedi',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(color: Colors.red),
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                        ),
+                ),
               ),
               TextButton.icon(
                   onPressed: () async {

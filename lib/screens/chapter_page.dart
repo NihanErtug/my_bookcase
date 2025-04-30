@@ -338,7 +338,12 @@ class ChapterPage extends ConsumerWidget {
                             .read(firebaseServicesProvider)
                             .chaptersService
                             .updateChapter(chapter.bookId, updatedChapter);
-                        Navigator.pop(context);
+
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ChapterPage(
+                                    chapter: updatedChapter, book: book)));
                       },
                       child: Text("Kaydet")),
                 ],
