@@ -29,23 +29,36 @@
 | Firebase Firestore | Gerçek zamanlı veritabanı |
 | Riverpod      | Durum yönetimi                 |
 | SharedPreferences | Yerel ayarların saklanması |
-| image_picker + path_provider | Yerel resim seçme ve kaydetme |
 
 ---
 
 ## 📸 Ekran Görüntüleri
 
-### 📂 Ana Sayfa
-![Ana Sayfa](screenshots/home.png)
+### 📂 Ana Sayfa 
+<div style="display: flex; justify-content: center; gap: 50px; flex-wrap: wrap;">
+    <img src="https://github.com/user-attachments/assets/7093e2dd-76bd-4cd9-809d-e3b4ad1b8e94?raw=true" style="width: 30%; min-width: 250px;">
+    <img src="https://github.com/user-attachments/assets/d70dd605-7f37-44f2-9f12-8ff67098ff04?raw=true" style="width: 30%; min-width: 250px;">
+    <img src="https://github.com/user-attachments/assets/2dcac14c-209d-4271-a09a-49e45b47a808?raw=true" style="width: 30%; min-width: 250px;">
+</div>
 
 ### 📚 Kitap Detay
-![Kitap Detay](screenshots/book_detail.png)
+<div style="display: flex;  justify-content: center; gap: 50px; flex-wrap: wrap;">
+    <img src="https://github.com/user-attachments/assets/6709654a-5811-473e-9cf9-6b88f3d58262?raw=true" style="width: 35%; min-width: 250px;">
+    <img src="https://github.com/user-attachments/assets/50467595-3bc0-48b7-9727-2b2435e6bc9a?raw=true" style="width: 35%; min-width: 250px;">
+</div>
 
-### 🗂️ Notlar Sayfası
-![Notlar](screenshots/notes_page.png)
+### 🗂️ Bölüm Detay
+<div style="display: flex; justify-content: center; gap: 50px; flex-wrap: wrap;">
+    <img src="https://github.com/user-attachments/assets/1e6b1afc-cca6-4544-8d1e-eb9b9baf551c?raw=true" style="width: 35%; min-width: 250px;">
+     <img src="https://github.com/user-attachments/assets/29a4b15a-fbf6-46e4-ac47-8012e5e03fd5?raw=true" style="width: 35%; min-width: 250px;">
+</div>
+
 
 ### 📅 Filtreleme Seçenekleri
-![Filtreler](screenshots/filters.png)
+<div style="display: flex; justify-content: center; gap: 50px; flex-wrap: wrap;">
+    <img src="https://github.com/user-attachments/assets/02b182e1-8bfa-4fb2-a728-946f5170653a?raw=true" style="width: 35%; min-width: 250px;">
+    <img src="https://github.com/user-attachments/assets/9fb9d22a-0917-4e6b-a5f4-2a56614337f7?raw=true" style="width: 35%; min-width: 250px;">
+</div>
 
 ---
 
