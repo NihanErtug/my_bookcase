@@ -51,7 +51,7 @@
 
 ## 🧠 Notlar
 
-- Kamera ile çekilen veya galeriden seçilen görseller yalnızca o cihazda görünür.
+- Kamera ve galeri yoluyla eklenen görseller yalnızca o cihazda görünür.
 - Tüm filtreleme işlemleri, gerçek zamanlı olarak Firestore üzerinden gerçekleşir.
 - Notlar ve kitap verileri kullanıcıya özeldir.
 
