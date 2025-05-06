@@ -78,7 +78,7 @@ MIT Lisansı. Daha fazla bilgi için [LICENSE](LICENSE) dosyasını inceleyin.
 
 ## ✍️ Geliştirici
 
-**[Nihan Ertuğ]**  
+**Nihan Ertuğ**  
 GitHub: [github.com/NihanErtug](https://github.com/NihanErtug)  
 
 
