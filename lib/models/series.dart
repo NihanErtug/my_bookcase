@@ -6,6 +6,7 @@ class Series extends Book {
   final String seriesName;
   final int bookOrder;
   final String seriesId;
+  final String type;
 
   Series({
     super.id,
@@ -26,6 +27,7 @@ class Series extends Book {
     required this.seriesName,
     required this.bookOrder,
     required this.seriesId,
+    this.type = 'series',
   });
   @override
   Map<String, dynamic> toMap() {
@@ -34,6 +36,7 @@ class Series extends Book {
     data['seriesName'] = seriesName;
     data['bookOrder'] = bookOrder;
     data['seriesId'] = seriesId;
+    data['type'] = type;
     return data;
   }
 
@@ -59,6 +62,7 @@ class Series extends Book {
       seriesName: map['seriesName'] ?? '',
       bookOrder: map['bookOrder'] ?? 0,
       seriesId: map['seriesId'] ?? '',
+      type: map['type'] ?? "series",
     );
   }
 
@@ -82,6 +86,7 @@ class Series extends Book {
     String? seriesName,
     int? bookOrder,
     String? seriesId,
+    String? type,
   }) {
     return Series(
       id: id ?? this.id,
@@ -102,6 +107,7 @@ class Series extends Book {
       seriesName: seriesName ?? this.seriesName,
       bookOrder: bookOrder ?? this.bookOrder,
       seriesId: seriesId ?? this.seriesId,
+      type: type ?? this.type,
     );
   }
 }

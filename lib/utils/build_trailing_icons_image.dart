@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:bookcase/models/book.dart';
 import 'package:bookcase/providers/firebase_service_provider.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -56,19 +57,21 @@ Widget buildImage(String? imageUrlOrPath, BuildContext context) {
 
   Widget imageWidget;
 
-  if (imageUrlOrPath == null) {
+  if (imageUrlOrPath == null || imageUrlOrPath.isEmpty) {
     imageWidget = Image.asset(
       'assets/pictures/default_pic.png',
       width: imageWidth,
       height: imageHeight,
       fit: BoxFit.contain,
     );
-  } else if (imageUrlOrPath.startsWith('/')) {
+  } else if (!kIsWeb && imageUrlOrPath.startsWith('/')) {
     imageWidget = Image.file(
       File(imageUrlOrPath),
       width: imageWidth,
       height: imageHeight,
       fit: BoxFit.contain,
+      cacheHeight: imageHeight.toInt(),
+      cacheWidth: imageWidth.toInt(),
     );
   } else {
     imageWidget = Image.network(
@@ -76,6 +79,16 @@ Widget buildImage(String? imageUrlOrPath, BuildContext context) {
       width: imageWidth,
       height: imageHeight,
       fit: BoxFit.contain,
+      loadingBuilder: (context, child, loadingProgress) {
+        if (loadingProgress == null) return child;
+        return SizedBox(
+          width: imageWidth,
+          height: imageHeight,
+          child: Center(
+            child: CircularProgressIndicator(),
+          ),
+        );
+      },
       errorBuilder: (context, error, stackTrace) {
         return Image.asset(
           'assets/pictures/default_pic.png',

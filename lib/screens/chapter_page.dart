@@ -4,6 +4,7 @@ import 'package:bookcase/providers/theme_notifier.dart';
 import 'package:bookcase/screens/book_detail_page.dart';
 
 import 'package:bookcase/screens/home_page.dart';
+import 'package:bookcase/utils/build_trailing_icons_image.dart';
 import 'package:bookcase/utils/popup_menu_button.dart';
 
 import 'package:flutter/material.dart';
@@ -519,16 +520,7 @@ class ChapterPage extends ConsumerWidget {
               child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              book.image != null && book.image!.isNotEmpty
-                  ? Image.network(
-                      book.image!,
-                      fit: BoxFit.contain,
-                    )
-                  : Image.asset(
-                      "assets/pictures/default_pic.png",
-                      width: MediaQuery.of(context).size.width * 0.2,
-                      height: MediaQuery.of(context).size.width * 0.4,
-                    ),
+              buildImage(book.image, context),
               SizedBox(width: 10),
               Flexible(
                   child: Text(
@@ -541,7 +533,6 @@ class ChapterPage extends ConsumerWidget {
           )),
           Expanded(
               child: ListView.builder(
-                  //itemCount: chapterList.length,
                   itemCount: completeChapterList.length,
                   itemBuilder: (context, index) {
                     final chapterItem = completeChapterList[index];

@@ -369,10 +369,8 @@ Widget _buildBottomButton(BuildContext context) {
           },
           child: Text(
             "Kitaplara Git",
-            style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: AppColors.greenColor),
+            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                fontWeight: FontWeight.bold, color: AppColors.greenColor),
           ),
         ),
         SizedBox(width: 10),
@@ -392,10 +390,8 @@ Widget _buildBottomButton(BuildContext context) {
           },
           child: Text(
             "Serilere Git",
-            style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: AppColors.greenColor),
+            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                fontWeight: FontWeight.bold, color: AppColors.greenColor),
           ),
         ),
       ],

@@ -7,8 +7,8 @@ class Auth {
   String? get currentUserId => _firebaseAuth.currentUser?.uid;
   User? get currentUser => _firebaseAuth.currentUser;
 
-  Stream<User?> get authStateChanges => _firebaseAuth.authStateChanges();
-  // kullanıcı çıkış yaptı mı? yoksa hala giriş yapmış şekilde içerde mi? takibi için.
+  //Stream<User?> get authStateChanges => _firebaseAuth.authStateChanges();
+  Stream<User?> get authStateChanges => _firebaseAuth.idTokenChanges();
 
   Future<void> createUser({
     required String email,

@@ -228,9 +228,10 @@ class FirebaseServiceBooks {
     }
   }
 
-  Stream<List<Series>> getSeriesBooks(String seriesId) {
+  Stream<List<Series>> getSeriesBooks(String userId) {
     return _seriesCollection
-        .where('seriesId', isEqualTo: seriesId)
+        .where('type', isEqualTo: 'series')
+        .where('userId', isEqualTo: userId)
         .snapshots()
         .map((snapshot) => snapshot.docs
             .map((doc) =>

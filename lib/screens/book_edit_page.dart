@@ -99,7 +99,7 @@ class _BookEditPageState extends ConsumerState<BookEditPage> {
             _buildTextField('Çevirmen', translatorController),
             _buildTextField('Kategori', categoryController),
             _buildTextField('Yayınevi', publishingController),
-            _buildTextField('Yayım Yılı', publicationYearController,
+            _buildTextField('Baskı Yılı', publicationYearController,
                 keyboardType: TextInputType.number),
             _buildTextField('Kitap Kapak Resmi', imageController),
             SizedBox(height: 10),
@@ -283,6 +283,8 @@ class _BookEditPageState extends ConsumerState<BookEditPage> {
           seriesName: seriesName,
           bookOrder: bookOrder,
           seriesId: seriesId,
+          type: "series",
+          userId: userId,
         );
 
         // Seri kitap için güncelleme ve silme işlemi

@@ -7,7 +7,7 @@ import 'package:bookcase/screens/add_book.dart';
 import 'package:bookcase/screens/book_detail_page.dart';
 import 'package:bookcase/screens/home_page.dart';
 
-import 'package:bookcase/utils/build_trailing_icons.dart';
+import 'package:bookcase/utils/build_trailing_icons_image.dart';
 import 'package:bookcase/utils/draggable_fab.dart';
 
 import 'package:bookcase/utils/turkishSort.dart';
@@ -160,28 +160,31 @@ class _BookListPageState extends ConsumerState<BookListPage> {
     final letters = _letterPositions.keys.toList();
     return Align(
       alignment: Alignment.centerRight,
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: letters.map((letter) {
-          return GestureDetector(
-            onTap: () {
-              if (_letterPositions.containsKey(letter)) {
-                _scrollController.animateTo(
-                  _letterPositions[letter]!,
-                  duration: Duration(milliseconds: 300),
-                  curve: Curves.easeInOut,
-                );
-              }
-            },
-            child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 4),
-              child: Text(
-                letter,
-                style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+      child: Padding(
+        padding: EdgeInsets.only(right: 8.0),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: letters.map((letter) {
+            return GestureDetector(
+              onTap: () {
+                if (_letterPositions.containsKey(letter)) {
+                  _scrollController.animateTo(
+                    _letterPositions[letter]!,
+                    duration: Duration(milliseconds: 300),
+                    curve: Curves.easeInOut,
+                  );
+                }
+              },
+              child: Padding(
+                padding: EdgeInsets.symmetric(vertical: 4),
+                child: Text(
+                  letter,
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                ),
               ),
-            ),
-          );
-        }).toList(),
+            );
+          }).toList(),
+        ),
       ),
     );
   }

@@ -164,15 +164,15 @@ class _AddBookState extends ConsumerState<AddBookScreen> {
                 TextFormField(
                   controller: _publishingController,
                   decoration: InputDecoration(
-                      labelText: 'Yayın Evi',
-                      hintText: 'Opsiyonel: Kitabın yayın evini giriniz'),
+                      labelText: 'Yayınevi',
+                      hintText: 'Opsiyonel: Kitabın yayınevini giriniz'),
                 ),
                 const SizedBox(height: 10),
                 TextFormField(
                   controller: _publicationYearController,
                   decoration: const InputDecoration(
-                    labelText: 'Yayımlanma Tarihi',
-                    hintText: 'Opsiyonel: Kitabın yayımlanma tarihini giriniz',
+                    labelText: 'Baskı Yılı',
+                    hintText: 'Opsiyonel: Kitabın basım yılını giriniz',
                   ),
                   keyboardType: TextInputType.number,
                 ),

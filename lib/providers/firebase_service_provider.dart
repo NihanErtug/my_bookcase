@@ -20,6 +20,12 @@ final firebaseServicesProvider = Provider<FirebaseServices>((ref) {
 
 final firebaseAuthProvider = Provider((ref) => FirebaseAuth.instance);
 
+final seriesListProvider =
+    StreamProvider.family<List<Series>, String>((ref, userId) {
+  final firebaseService = ref.watch(firebaseServicesProvider);
+  return firebaseService.booksService.getSeriesBooks(userId);
+});
+
 final bookListProvider =
     StreamProvider.family<List<Book>, String>((ref, userId) {
   final firebaseService = ref.watch(firebaseServicesProvider);

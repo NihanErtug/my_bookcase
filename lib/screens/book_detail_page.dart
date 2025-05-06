@@ -10,7 +10,7 @@ import 'package:bookcase/screens/book_list_page.dart';
 import 'package:bookcase/screens/chapter_page.dart';
 import 'package:bookcase/screens/home_page.dart';
 import 'package:bookcase/screens/series_list_page.dart';
-import 'package:bookcase/utils/build_trailing_icons.dart';
+import 'package:bookcase/utils/build_trailing_icons_image.dart';
 
 import 'package:bookcase/utils/popup_menu_button.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -192,8 +192,8 @@ Widget _buildBookInfo(Book book, BuildContext context) {
         : 'Kitap Adı: ${book.name}',
     'Yazar: ${book.author}',
     if (book.translator != null) 'Çevirmen: ${book.translator}',
-    if (book.publicationYear != null) 'Yayım Yılı: ${book.publicationYear}',
-    if (book.publishing != null) 'Yayın Evi: ${book.publishing}',
+    if (book.publicationYear != null) 'Baskı Yılı: ${book.publicationYear}',
+    if (book.publishing != null) 'Yayınevi: ${book.publishing}',
     if (book.category != null) 'Kategori: ${book.category}',
   ];
   return Row(
